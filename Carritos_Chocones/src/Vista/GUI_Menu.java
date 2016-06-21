@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import Controlador.Controlador_Menu;
+
 /**
  *
  * @author franp
@@ -12,12 +14,18 @@ package Vista;
 public class GUI_Menu extends javax.swing.JFrame {
 
     GUI_Nivel guiNivel;
+    Controlador_Menu controladorMenu;
+
     /**
      * Creates new form GUI_Menu
      */
     public GUI_Menu() {
         initComponents();
-        this.guiNivel= new GUI_Nivel();
+        this.guiNivel = new GUI_Nivel();
+        this.controladorMenu = new Controlador_Menu(guiNivel, this);
+        this.addKeyListener(controladorMenu);
+        this.setSize(946, 563);
+        this.setTitle("Carritos Chocones");
     }
 
     /**
@@ -29,18 +37,25 @@ public class GUI_Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jl_Dificultad = new javax.swing.JLabel();
+        jcb_Dificultad = new javax.swing.JComboBox<>();
+        jl_FondoMenu = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        jl_Dificultad.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jl_Dificultad.setText("Escoja la dificultad:");
+        getContentPane().add(jl_Dificultad);
+        jl_Dificultad.setBounds(610, 480, 250, 17);
+
+        jcb_Dificultad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(jcb_Dificultad);
+        jcb_Dificultad.setBounds(860, 480, 56, 20);
+
+        jl_FondoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoMenu_Mario.jpg"))); // NOI18N
+        getContentPane().add(jl_FondoMenu);
+        jl_FondoMenu.setBounds(0, 0, 945, 532);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -81,5 +96,8 @@ public class GUI_Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> jcb_Dificultad;
+    private javax.swing.JLabel jl_Dificultad;
+    private javax.swing.JLabel jl_FondoMenu;
     // End of variables declaration//GEN-END:variables
 }

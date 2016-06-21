@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.Hilo_Fondo;
 import Modelo.Hilo_Personaje;
 import Vista.GUI_Nivel;
 import java.awt.event.KeyEvent;
@@ -18,29 +19,39 @@ public class Controlador_Personaje implements KeyListener {
 
     GUI_Nivel gui;
     Hilo_Personaje personaje;
+    Hilo_Fondo fondo;
 
-    public Controlador_Personaje(GUI_Nivel gui, Hilo_Personaje personaje) {
+    public Controlador_Personaje(GUI_Nivel gui, Hilo_Personaje personaje, Hilo_Fondo fondo) {
         this.gui = gui;
         this.personaje = personaje;
+        this.fondo = fondo;
     }
 
     @Override
-    public void keyTyped(KeyEvent event) {
-        if (event.getKeyCode() == KeyEvent.VK_RIGHT) {
+    public void keyTyped(KeyEvent keyEvent) {
+        if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
             personaje.moverDerecha();
         }
-        if (event.getKeyCode() == KeyEvent.VK_LEFT) {
+        if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT) {
             personaje.moverIzquierda();
+        }
+        if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER) {
+            System.out.println("Estripó Enter");
+            this.fondo.start();
         }
     }
 
     @Override
-    public void keyPressed(KeyEvent event) {
-        if (event.getKeyCode() == KeyEvent.VK_RIGHT) {
+    public void keyPressed(KeyEvent keyEvent) {
+        if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
             personaje.moverDerecha();
         }
-        if (event.getKeyCode() == KeyEvent.VK_LEFT) {
+        if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT) {
             personaje.moverIzquierda();
+        }
+        if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER) {
+            System.out.println("Estripó Enter");
+
         }
     }
 

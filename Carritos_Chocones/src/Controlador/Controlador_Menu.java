@@ -16,7 +16,7 @@ import java.awt.event.KeyListener;
  *
  * @author franp
  */
-public class Controlador_Menu implements KeyListener, ActionListener {
+public class Controlador_Menu implements KeyListener, ActionListener{
 
     GUI_Menu guiMenu;
     GUI_Nivel guiNivel;

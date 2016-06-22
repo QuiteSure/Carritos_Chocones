@@ -81,8 +81,9 @@ public class GUI_Nivel extends javax.swing.JFrame {
     Carril 2: 420
     Carril 3: 570
      */
-    public JLabel setNuevoEnemigo(int identificador) {
+    public JLabel setNuevoEnemigo() {
         JLabel jl_Enemigo = new JLabel();
+        int identificador = 1 + (int) (Math.random() * 4);
         int ubicacionRandomX = 0;
         int random = 1 + (int) (Math.random() * 3);
         switch (random) {
@@ -134,6 +135,7 @@ public class GUI_Nivel extends javax.swing.JFrame {
     private void initComponents() {
 
         jl_Personaje = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jl_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -142,6 +144,11 @@ public class GUI_Nivel extends javax.swing.JFrame {
         jl_Personaje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/carro_azul.png"))); // NOI18N
         getContentPane().add(jl_Personaje);
         jl_Personaje.setBounds(390, 580, 90, 120);
+
+        jLabel2.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        jLabel2.setText("000");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(80, 60, 34, 14);
 
         jl_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo_juego_Final.png"))); // NOI18N
         jl_Fondo.setDisabledIcon(null);
@@ -153,6 +160,7 @@ public class GUI_Nivel extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jl_Fondo;
     private javax.swing.JLabel jl_Personaje;
     // End of variables declaration//GEN-END:variables

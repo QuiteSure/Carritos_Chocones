@@ -37,6 +37,19 @@
         </Constraint>
       </Constraints>
     </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Sylfaen" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="000"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="80" y="60" width="34" height="14"/>
+        </Constraint>
+      </Constraints>
+    </Component>
     <Component class="javax.swing.JLabel" name="jl_Fondo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">

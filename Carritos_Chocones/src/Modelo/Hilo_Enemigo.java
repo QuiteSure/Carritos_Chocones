@@ -21,13 +21,6 @@ public class Hilo_Enemigo extends Thread {
         this.guiNivel = guiNivel;
     }
 
-    public void generarEnemigo() {
-        int identificador = 1 + (int) (Math.random() * 4);
-        JLabel enemigo = guiNivel.setNuevoEnemigo(identificador);
-        guiNivel.arrayEnemigos().add(enemigo);
-//        this.enemigos.add(guiNivel.setNuevoEnemigo(identificador));  
-    }
-
     public void desecharEnemigo() {
         ArrayList<JLabel> enemigos = guiNivel.arrayEnemigos();
         for (int indice = 0; indice < enemigos.size(); indice++) {
@@ -38,21 +31,13 @@ public class Hilo_Enemigo extends Thread {
         }
     }
 
-    public void moverEnemigoAbajo() {
-        guiNivel.moverEnemigoAbajo();
-//        ArrayList<JLabel> enemigos = guiNivel.arrayEnemigos();
-//        for (int indice = 0; indice < enemigos.size(); indice++) {
-//            enemigos.get(indice).setLocation(enemigos.get(indice).getX(), enemigos.get(indice).getY() + 15);
-//            guiNivel.arrayEnemigos().get(indice);
-//        }
-    }
 
     public void run() {
         try {
             while (true) {
                 sleep(1000);
-                generarEnemigo();
-                moverEnemigoAbajo();
+                guiNivel.setNuevoEnemigo();
+                 guiNivel.moverEnemigoAbajo();
                 desecharEnemigo();
             }
         } catch (Exception exception) {

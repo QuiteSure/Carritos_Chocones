@@ -34,7 +34,7 @@ public class GUI_Nivel extends javax.swing.JFrame {
         this.setTitle("Carritos Chocones");
         this.controladorPersonaje = new Controlador_Personaje(this, this.personaje, this.hiloFondo);
         this.addKeyListener(controladorPersonaje);
-        this.controladorNivel= new Controlador_Nivel(this, this.hiloFondo);
+        this.controladorNivel = new Controlador_Nivel(this, this.hiloFondo);
         this.addComponentListener(controladorNivel);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setResizable(false);
@@ -46,6 +46,44 @@ public class GUI_Nivel extends javax.swing.JFrame {
 
     public JLabel getPersonaje() {
         return this.jl_Personaje;
+    }
+
+    /* 
+    Carril 1: 250
+    Carril 2: 420
+    Carril 3: 570
+     */
+    public void setNuevoEnemigo(int identificador, int ubicacionX, int ubicacionY) {
+        int ubicacionRandomX = 0;
+        int random = 1 + (int) (Math.random() * 3);
+        switch (random) {
+            case 1:
+                ubicacionRandomX = 250;
+                break;
+            case 2:
+                ubicacionRandomX = 420;
+                break;
+            case 3:
+                ubicacionRandomX = 570;
+                break;
+            default:;
+        }
+        switch (identificador) {
+            case 0:
+                JLabel jl_Enemigo = new JLabel();
+                jl_Enemigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/carro_rojo.png")));
+                getContentPane().add(jl_Enemigo);
+                jl_Enemigo.setBounds(ubicacionRandomX, -100, 86, 112); //setBounds(x, y, width, height)
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+
+            default:;
+        }
     }
 
     /**

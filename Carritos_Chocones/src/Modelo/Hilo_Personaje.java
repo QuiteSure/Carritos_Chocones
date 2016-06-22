@@ -12,7 +12,7 @@ import javax.swing.JLabel;
  *
  * @author franp
  */
-public class Hilo_Personaje {
+public class Hilo_Personaje extends Thread {
 
     GUI_Nivel gui;
 
@@ -25,7 +25,7 @@ public class Hilo_Personaje {
     }
 
     public void moverDerecha() {
-        if (getPersonaje().getX() + 175 >= 730) {
+        if (getPersonaje().getX() + 175 >= 670) {
             System.out.println("No puede pasar de 397");
         } else {
             getPersonaje().setLocation(getPersonaje().getX() + 150, getPersonaje().getY());
@@ -33,7 +33,7 @@ public class Hilo_Personaje {
     }
 
     public void moverIzquierda() {
-        if (getPersonaje().getX() - 175 <= 180) {
+        if (getPersonaje().getX() - 175 <= 160) {
             System.out.println("No puede mover a la izquierda");
         } else {
             getPersonaje().setLocation(getPersonaje().getX() - 150, getPersonaje().getY());

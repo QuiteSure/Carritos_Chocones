@@ -59,8 +59,6 @@ public class GUI_Menu extends javax.swing.JFrame {
     public JButton getJb_Nivel3() {
         return jb_Nivel3;
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -71,7 +69,6 @@ public class GUI_Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jl_Dificultad = new javax.swing.JLabel();
         jb_Nivel1 = new javax.swing.JButton();
         jb_Nivel2 = new javax.swing.JButton();
         jb_Nivel3 = new javax.swing.JButton();
@@ -79,11 +76,6 @@ public class GUI_Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
-
-        jl_Dificultad.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jl_Dificultad.setText("Escoja la dificultad:");
-        getContentPane().add(jl_Dificultad);
-        jl_Dificultad.setBounds(610, 480, 250, 17);
 
         jb_Nivel1.setText("Nivel 1");
         getContentPane().add(jb_Nivel1);
@@ -151,7 +143,6 @@ public class GUI_Menu extends javax.swing.JFrame {
     private javax.swing.JButton jb_Nivel1;
     private javax.swing.JButton jb_Nivel2;
     private javax.swing.JButton jb_Nivel3;
-    private javax.swing.JLabel jl_Dificultad;
     private javax.swing.JLabel jl_FondoMenu;
     // End of variables declaration//GEN-END:variables
 }

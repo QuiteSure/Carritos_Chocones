@@ -26,8 +26,8 @@ public class Hilo_Fondo extends Thread {
     }
 
     public void moverFondo() {
-        if (getFondo().getY()+15>=0) {
-            getFondo().setLocation(0, getFondo().getY()-745);
+        if (getFondo().getY() + 15 >= 0) {
+            getFondo().setLocation(0, -1885);
         } else {
             getFondo().setLocation(getFondo().getX(), getFondo().getY() + 25);
         }

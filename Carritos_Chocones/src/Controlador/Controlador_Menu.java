@@ -20,7 +20,7 @@ public class Controlador_Menu implements KeyListener, ActionListener {
 
     GUI_Menu guiMenu;
     GUI_Nivel guiNivel;
-    public static int velocidadNivel = 0;
+    public static int velocidadNivel = 300;
 
     public Controlador_Menu(GUI_Menu guiMenu, GUI_Nivel guiNivel) {
         this.guiMenu = guiMenu;
@@ -31,7 +31,6 @@ public class Controlador_Menu implements KeyListener, ActionListener {
     @Override
     public void actionPerformed(ActionEvent event) {
         if (event.getActionCommand().equals("Nivel 1")) {
-
             velocidadNivel = 300;
             guiNivel.setVisible(true);
             guiNivel.setAlwaysOnTop(true);

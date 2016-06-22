@@ -35,10 +35,6 @@ public class Controlador_Personaje implements KeyListener {
         if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT) {
             personaje.moverIzquierda();
         }
-        if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER) {
-            System.out.println("Estripó Enter");
-            this.fondo.start();
-        }
     }
 
     @Override
@@ -49,10 +45,10 @@ public class Controlador_Personaje implements KeyListener {
         if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT) {
             personaje.moverIzquierda();
         }
-        if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER) {
-            System.out.println("Estripó Enter");
-
-        }
+//        if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER) {
+//            System.out.println("Estripó Enter");
+//
+//        }
     }
 
     @Override

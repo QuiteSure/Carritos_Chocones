@@ -16,39 +16,43 @@ import java.awt.event.KeyListener;
  *
  * @author franp
  */
-public class Controlador_Menu implements ActionListener, KeyListener{
+public class Controlador_Menu implements KeyListener, ActionListener {
 
-    GUI_Nivel guiNivel;
     GUI_Menu guiMenu;
-    
-    public Controlador_Menu(GUI_Nivel guiNivel, GUI_Menu guiMenu){
+    GUI_Nivel guiNivel;
+
+    public Controlador_Menu(GUI_Menu guiMenu, GUI_Nivel guiNivel) {
+        this.guiMenu = guiMenu;
+        this.guiMenu.addKeyListener(this);
         this.guiNivel= guiNivel;
-        this.guiMenu= guiMenu;
     }
+
     @Override
     public void actionPerformed(ActionEvent event) {
-        
+
     }
 
     @Override
-    public void keyTyped(KeyEvent keyEvent) {
-        if (keyEvent.getKeyCode()== KeyEvent.VK_ENTER){
+    public void keyTyped(KeyEvent keyEvent2) {
+        if (keyEvent2.getKeyCode() == KeyEvent.VK_ENTER) {
             System.out.println("Estripó Enter");
             guiNivel.setVisible(true);
+            guiNivel.setAlwaysOnTop(true);
         }
     }
 
     @Override
-    public void keyPressed(KeyEvent keyEvent) {
-           if (keyEvent.getKeyCode()== KeyEvent.VK_ENTER){
+    public void keyPressed(KeyEvent keyEvent2) {
+        if (keyEvent2.getKeyCode() == KeyEvent.VK_ENTER) {
             System.out.println("Estripó Enter");
             guiNivel.setVisible(true);
+            guiNivel.setAlwaysOnTop(true);
         }
     }
 
     @Override
-    public void keyReleased(KeyEvent keyEvent) {
-        
+    public void keyReleased(KeyEvent keyEvent2) {
+
     }
-    
+
 }

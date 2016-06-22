@@ -14,14 +14,14 @@ import javax.swing.JLabel;
  */
 public class Hilo_Fondo extends Thread {
 
-    GUI_Nivel gui;
+    GUI_Nivel guiNivel;
 
-    public Hilo_Fondo(GUI_Nivel gui) {
-        this.gui = gui;
+    public Hilo_Fondo(GUI_Nivel guiNivel) {
+        this.guiNivel = guiNivel;
     }
 
     public JLabel getFondo() {
-        return gui.getFondo(); //fondo.getFondo() o getFondo()
+        return guiNivel.getFondo(); //fondo.getFondo() o getFondo()
     }
 
     public void moverFondo() {
@@ -35,7 +35,7 @@ public class Hilo_Fondo extends Thread {
     public void run() {
         try {
             while (true) {
-                sleep(500);
+                sleep(300);
                 this.moverFondo();
             }
         } catch (Exception e) {

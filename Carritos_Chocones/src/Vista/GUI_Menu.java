@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.Controlador_Menu;
+import java.util.ArrayList;
 
 /**
  *
@@ -22,10 +23,11 @@ public class GUI_Menu extends javax.swing.JFrame {
     public GUI_Menu() {
         initComponents();
         this.guiNivel = new GUI_Nivel();
-        this.controladorMenu = new Controlador_Menu(guiNivel, this);
-        this.addKeyListener(controladorMenu);
+        this.controladorMenu = new Controlador_Menu(this, this.guiNivel);
         this.setSize(946, 563);
         this.setTitle("Carritos Chocones");
+        this.requestFocus(true);
+        this.addKeyListener(this.controladorMenu);
     }
 
     /**
@@ -38,7 +40,9 @@ public class GUI_Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jl_Dificultad = new javax.swing.JLabel();
-        jcb_Dificultad = new javax.swing.JComboBox<>();
+        jb_Nivel1 = new javax.swing.JButton();
+        jb_Nivel2 = new javax.swing.JButton();
+        jb_Nivel3 = new javax.swing.JButton();
         jl_FondoMenu = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,9 +53,17 @@ public class GUI_Menu extends javax.swing.JFrame {
         getContentPane().add(jl_Dificultad);
         jl_Dificultad.setBounds(610, 480, 250, 17);
 
-        jcb_Dificultad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jcb_Dificultad);
-        jcb_Dificultad.setBounds(860, 480, 56, 20);
+        jb_Nivel1.setText("Nivel 1");
+        getContentPane().add(jb_Nivel1);
+        jb_Nivel1.setBounds(40, 50, 65, 23);
+
+        jb_Nivel2.setText("Nivel 2");
+        getContentPane().add(jb_Nivel2);
+        jb_Nivel2.setBounds(40, 100, 65, 23);
+
+        jb_Nivel3.setText("Nivel 3");
+        getContentPane().add(jb_Nivel3);
+        jb_Nivel3.setBounds(40, 150, 65, 23);
 
         jl_FondoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoMenu_Mario.jpg"))); // NOI18N
         getContentPane().add(jl_FondoMenu);
@@ -96,7 +108,9 @@ public class GUI_Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jcb_Dificultad;
+    private javax.swing.JButton jb_Nivel1;
+    private javax.swing.JButton jb_Nivel2;
+    private javax.swing.JButton jb_Nivel3;
     private javax.swing.JLabel jl_Dificultad;
     private javax.swing.JLabel jl_FondoMenu;
     // End of variables declaration//GEN-END:variables

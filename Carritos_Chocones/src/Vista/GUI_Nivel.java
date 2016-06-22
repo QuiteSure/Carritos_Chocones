@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.Controlador_Nivel;
 import Controlador.Controlador_Personaje;
 import Modelo.Hilo_Fondo;
 import Modelo.Hilo_Personaje;
@@ -19,6 +20,7 @@ public class GUI_Nivel extends javax.swing.JFrame {
     Hilo_Fondo hiloFondo;
     Hilo_Personaje personaje;
     Controlador_Personaje controladorPersonaje;
+    Controlador_Nivel controladorNivel;
 
     /**
      * Creates new form GUI_Nivel
@@ -26,13 +28,15 @@ public class GUI_Nivel extends javax.swing.JFrame {
     public GUI_Nivel() {
         initComponents();
         this.hiloFondo = new Hilo_Fondo(this);
-        this.personaje= new Hilo_Personaje(this);
+        this.personaje = new Hilo_Personaje(this);
 //        hiloFondo.start();// esto ejecuta el método run de hiloFondo
         this.setSize(944, 805);
-        this.setAlwaysOnTop(true);
         this.setTitle("Carritos Chocones");
-        this.controladorPersonaje= new Controlador_Personaje(this, this.personaje, this.hiloFondo);
+        this.controladorPersonaje = new Controlador_Personaje(this, this.personaje, this.hiloFondo);
         this.addKeyListener(controladorPersonaje);
+        this.controladorNivel= new Controlador_Nivel(this, this.hiloFondo);
+        this.addComponentListener(controladorNivel);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
     public JLabel getFondo() {
@@ -62,10 +66,9 @@ public class GUI_Nivel extends javax.swing.JFrame {
         getContentPane().add(jl_Personaje);
         jl_Personaje.setBounds(430, 570, 90, 120);
 
-        jl_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo_juego_version2.png"))); // NOI18N
-        jl_Fondo.setText("jLabel1");
+        jl_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo_juego.png"))); // NOI18N
         getContentPane().add(jl_Fondo);
-        jl_Fondo.setBounds(0, -440, 950, 1190);
+        jl_Fondo.setBounds(0, -1160, 860, 1910);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

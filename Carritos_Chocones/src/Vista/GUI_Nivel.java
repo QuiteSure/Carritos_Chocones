@@ -11,6 +11,7 @@ import Controlador.Controlador_Personaje;
 import Modelo.Hilo_Enemigo;
 import Modelo.Hilo_Fondo;
 import Modelo.Hilo_Personaje;
+import Modelo.Hilo_Puntuacion;
 import java.util.ArrayList;
 import javax.swing.JLabel;
 
@@ -26,6 +27,7 @@ public class GUI_Nivel extends javax.swing.JFrame {
     Controlador_Nivel controladorNivel;
     ArrayList<JLabel> enemigos;
     Hilo_Enemigo hiloEnemigo;
+    Hilo_Puntuacion hiloPuntuacion;
 
     /**
      * Creates new form GUI_Nivel
@@ -35,12 +37,13 @@ public class GUI_Nivel extends javax.swing.JFrame {
         this.hiloFondo = new Hilo_Fondo(this);
         this.personaje = new Hilo_Personaje(this);
         this.hiloEnemigo = new Hilo_Enemigo(this);
+        this.hiloPuntuacion= new Hilo_Puntuacion(this);
 //        hiloFondo.start();// esto ejecuta el método run de hiloFondo
         this.setSize(861, 805);
         this.setTitle("Carritos Chocones");
         this.controladorPersonaje = new Controlador_Personaje(this, this.personaje, this.hiloFondo);
         this.addKeyListener(controladorPersonaje);
-        this.controladorNivel = new Controlador_Nivel(this, this.hiloFondo, this.hiloEnemigo);
+        this.controladorNivel = new Controlador_Nivel(this, this.hiloFondo, this.hiloEnemigo, this.hiloPuntuacion);
         this.addComponentListener(controladorNivel);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setResizable(false);
@@ -56,6 +59,10 @@ public class GUI_Nivel extends javax.swing.JFrame {
 
     public ArrayList arrayEnemigos() {
         return this.enemigos;
+    }
+    
+    public JLabel getJL_Puntuacion(){
+        return this.jl_Puntuacion;
     }
 
     public void moverEnemigoAbajo() {
@@ -135,7 +142,7 @@ public class GUI_Nivel extends javax.swing.JFrame {
     private void initComponents() {
 
         jl_Personaje = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jl_Puntuacion = new javax.swing.JLabel();
         jl_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -145,10 +152,10 @@ public class GUI_Nivel extends javax.swing.JFrame {
         getContentPane().add(jl_Personaje);
         jl_Personaje.setBounds(390, 580, 90, 120);
 
-        jLabel2.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
-        jLabel2.setText("000");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(80, 60, 34, 14);
+        jl_Puntuacion.setFont(new java.awt.Font("Sylfaen", 0, 36)); // NOI18N
+        jl_Puntuacion.setText("00");
+        getContentPane().add(jl_Puntuacion);
+        jl_Puntuacion.setBounds(780, 40, 40, 60);
 
         jl_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo_juego_Final.png"))); // NOI18N
         jl_Fondo.setDisabledIcon(null);
@@ -160,8 +167,8 @@ public class GUI_Nivel extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jl_Fondo;
     private javax.swing.JLabel jl_Personaje;
+    private javax.swing.JLabel jl_Puntuacion;
     // End of variables declaration//GEN-END:variables
 }

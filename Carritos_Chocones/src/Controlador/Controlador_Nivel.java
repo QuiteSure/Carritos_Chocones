@@ -7,6 +7,7 @@ package Controlador;
 
 import Modelo.Hilo_Enemigo;
 import Modelo.Hilo_Fondo;
+import Modelo.Hilo_Puntuacion;
 import Vista.GUI_Nivel;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
@@ -20,11 +21,13 @@ public class Controlador_Nivel implements ComponentListener {
     GUI_Nivel guiNivel;
     Hilo_Fondo hiloFondo;
     Hilo_Enemigo hiloEnemigo;
+    Hilo_Puntuacion hiloPuntuacion;
 
-    public Controlador_Nivel(GUI_Nivel guiNivel, Hilo_Fondo hiloFondo, Hilo_Enemigo hiloEnemigo) {
+    public Controlador_Nivel(GUI_Nivel guiNivel, Hilo_Fondo hiloFondo, Hilo_Enemigo hiloEnemigo, Hilo_Puntuacion hiloPuntuacion) {
         this.guiNivel = guiNivel;
         this.hiloFondo = hiloFondo;
         this.hiloEnemigo = hiloEnemigo;
+        this.hiloPuntuacion = hiloPuntuacion;
     }
 
     @Override
@@ -40,9 +43,10 @@ public class Controlador_Nivel implements ComponentListener {
     @Override
     public void componentShown(ComponentEvent componentEvent) {
         try {
-            guiNivel.setFondo();
+            this.guiNivel.setFondo();
             this.hiloFondo.start();
-            hiloEnemigo.start();
+            this.hiloEnemigo.start();
+            this.hiloPuntuacion.start();
         } catch (Exception e) {
             System.out.println("Exception en componentShown() -> hiloFondo.start() " + e);
         }

@@ -31,19 +31,19 @@ public class Controlador_Menu implements KeyListener, ActionListener{
     @Override
     public void actionPerformed(ActionEvent event) {
         if (event.getActionCommand().equals("Nivel 1")) {
-            velocidadNivel = 300;
+            velocidadNivel = 100;
             guiNivel.setVisible(true);
             guiNivel.setAlwaysOnTop(true);
         }
         if (event.getActionCommand().equals("Nivel 2")) {
 
-            velocidadNivel = 150;
+            velocidadNivel = 75;
             guiNivel.setVisible(true);
             guiNivel.setAlwaysOnTop(true);
         }
         if (event.getActionCommand().equals("Nivel 3")) {
 
-            velocidadNivel = 100;
+            velocidadNivel = 25;
             guiNivel.setVisible(true);
             guiNivel.setAlwaysOnTop(true);
         }

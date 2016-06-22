@@ -37,7 +37,7 @@ public class GUI_Nivel extends javax.swing.JFrame {
         this.hiloFondo = new Hilo_Fondo(this);
         this.personaje = new Hilo_Personaje(this);
         this.hiloEnemigo = new Hilo_Enemigo(this);
-        this.hiloPuntuacion= new Hilo_Puntuacion(this);
+        this.hiloPuntuacion = new Hilo_Puntuacion(this);
 //        hiloFondo.start();// esto ejecuta el método run de hiloFondo
         this.setSize(861, 805);
         this.setTitle("Carritos Chocones");
@@ -47,6 +47,7 @@ public class GUI_Nivel extends javax.swing.JFrame {
         this.addComponentListener(controladorNivel);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setResizable(false);
+        this.enemigos = new ArrayList<>();
     }
 
     public JLabel getFondo() {
@@ -60,8 +61,8 @@ public class GUI_Nivel extends javax.swing.JFrame {
     public ArrayList arrayEnemigos() {
         return this.enemigos;
     }
-    
-    public JLabel getJL_Puntuacion(){
+
+    public JLabel getJL_Puntuacion() {
         return this.jl_Puntuacion;
     }
 
@@ -110,25 +111,34 @@ public class GUI_Nivel extends javax.swing.JFrame {
                 jl_Enemigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/carro_verde.png")));
                 getContentPane().add(jl_Enemigo);
                 jl_Enemigo.setBounds(ubicacionRandomX, 400, 86, 112); //setBounds(x, y, width, height)
+                jl_Enemigo.setLocation(ubicacionRandomX, -100);
                 break;
             case 2:
                 jl_Enemigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/carro_azul.png")));
                 getContentPane().add(jl_Enemigo);
                 jl_Enemigo.setBounds(ubicacionRandomX, -100, 86, 112); //setBounds(x, y, width, height)
+                jl_Enemigo.setLocation(ubicacionRandomX, -100);
                 break;
             case 3:
                 jl_Enemigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/carro_morado.png")));
                 getContentPane().add(jl_Enemigo);
                 jl_Enemigo.setBounds(ubicacionRandomX, -100, 86, 112); //setBounds(x, y, width, height)
+                jl_Enemigo.setLocation(ubicacionRandomX, -100);
                 break;
             case 4:
                 jl_Enemigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/carro_amarillo.png")));
                 getContentPane().add(jl_Enemigo);
                 jl_Enemigo.setBounds(ubicacionRandomX, -100, 86, 112); //setBounds(x, y, width, height)
+                jl_Enemigo.setLocation(ubicacionRandomX, -100);
                 break;
-            default:;
+            default:
+                jl_Enemigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/carro_amarillo.png")));
+                getContentPane().add(jl_Enemigo);
+                jl_Enemigo.setBounds(ubicacionRandomX, -100, 86, 112); //setBounds(x, y, width, height)
+                jl_Enemigo.setLocation(ubicacionRandomX, -100);
+                break;
         }
-        enemigos.add(jl_Enemigo);
+        this.enemigos.add(jl_Enemigo);
         return jl_Enemigo;
     }
 
@@ -152,10 +162,10 @@ public class GUI_Nivel extends javax.swing.JFrame {
         getContentPane().add(jl_Personaje);
         jl_Personaje.setBounds(390, 580, 90, 120);
 
-        jl_Puntuacion.setFont(new java.awt.Font("Sylfaen", 0, 36)); // NOI18N
+        jl_Puntuacion.setFont(new java.awt.Font("Sylfaen", 1, 44)); // NOI18N
         jl_Puntuacion.setText("00");
         getContentPane().add(jl_Puntuacion);
-        jl_Puntuacion.setBounds(780, 40, 40, 60);
+        jl_Puntuacion.setBounds(720, 40, 140, 60);
 
         jl_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo_juego_Final.png"))); // NOI18N
         jl_Fondo.setDisabledIcon(null);

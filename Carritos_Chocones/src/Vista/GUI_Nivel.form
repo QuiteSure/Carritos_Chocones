@@ -40,13 +40,13 @@
     <Component class="javax.swing.JLabel" name="jl_Puntuacion">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Sylfaen" size="36" style="0"/>
+          <Font name="Sylfaen" size="44" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="00"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="780" y="40" width="40" height="60"/>
+          <AbsoluteConstraints x="720" y="40" width="140" height="60"/>
         </Constraint>
       </Constraints>
     </Component>

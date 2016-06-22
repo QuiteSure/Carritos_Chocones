@@ -30,7 +30,7 @@ public class GUI_Nivel extends javax.swing.JFrame {
         this.hiloFondo = new Hilo_Fondo(this);
         this.personaje = new Hilo_Personaje(this);
 //        hiloFondo.start();// esto ejecuta el método run de hiloFondo
-        this.setSize(944, 805);
+        this.setSize(861, 805);
         this.setTitle("Carritos Chocones");
         this.controladorPersonaje = new Controlador_Personaje(this, this.personaje, this.hiloFondo);
         this.addKeyListener(controladorPersonaje);

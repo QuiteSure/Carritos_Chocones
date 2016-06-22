@@ -6,6 +6,8 @@
 package Vista;
 
 import Controlador.Controlador_Menu;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 /**
@@ -28,6 +30,20 @@ public class GUI_Menu extends javax.swing.JFrame {
         this.setTitle("Carritos Chocones");
         this.requestFocus(true);
         this.addKeyListener(this.controladorMenu);
+        this.setActionControlador(controladorMenu);
+        this.setKeyControlador(controladorMenu);
+    }
+
+    public void setActionControlador(ActionListener controladorMenu) {
+        jb_Nivel1.addActionListener(controladorMenu);
+        jb_Nivel2.addActionListener(controladorMenu);
+        jb_Nivel3.addActionListener(controladorMenu);
+    }
+
+    public void setKeyControlador(KeyListener controladorMenu) {
+        jb_Nivel1.addKeyListener(controladorMenu);
+        jb_Nivel2.addKeyListener(controladorMenu);
+        jb_Nivel3.addKeyListener(controladorMenu);
     }
 
     /**
@@ -86,16 +102,24 @@ public class GUI_Menu extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUI_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI_Menu.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUI_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI_Menu.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUI_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI_Menu.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUI_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI_Menu.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 

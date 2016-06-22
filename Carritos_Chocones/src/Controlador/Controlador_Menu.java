@@ -20,6 +20,7 @@ public class Controlador_Menu implements KeyListener, ActionListener {
 
     GUI_Menu guiMenu;
     GUI_Nivel guiNivel;
+    public static int velocidadNivel = 0;
 
     public Controlador_Menu(GUI_Menu guiMenu, GUI_Nivel guiNivel) {
         this.guiMenu = guiMenu;
@@ -30,29 +31,50 @@ public class Controlador_Menu implements KeyListener, ActionListener {
     @Override
     public void actionPerformed(ActionEvent event) {
         if (event.getActionCommand().equals("Nivel 1")) {
-            System.out.println("Nivel 1");
+
+            velocidadNivel = 300;
+            guiNivel.setVisible(true);
+            guiNivel.setAlwaysOnTop(true);
         }
         if (event.getActionCommand().equals("Nivel 2")) {
-            System.out.println("Nivel 2");
+
+            velocidadNivel = 150;
+            guiNivel.setVisible(true);
+            guiNivel.setAlwaysOnTop(true);
         }
         if (event.getActionCommand().equals("Nivel 3")) {
-            System.out.println("Nivel 3");
-        }
-    }
 
-    @Override
-    public void keyTyped(KeyEvent keyEvent2) {
-        if (keyEvent2.getKeyCode() == KeyEvent.VK_ENTER) {
-            System.out.println("Estripó Enter");
+            velocidadNivel = 100;
             guiNivel.setVisible(true);
             guiNivel.setAlwaysOnTop(true);
         }
     }
 
     @Override
+    public void keyTyped(KeyEvent keyEvent2) {
+        if (keyEvent2.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (keyEvent2.getSource() == guiMenu.getJb_Nivel1()) {
+                velocidadNivel = 300;
+                guiNivel.setVisible(true);
+                guiNivel.setAlwaysOnTop(true);
+            }
+            if (keyEvent2.getSource() == guiMenu.getJb_Nivel2()) {
+                velocidadNivel = 150;
+                guiNivel.setVisible(true);
+                guiNivel.setAlwaysOnTop(true);
+            }
+            if (keyEvent2.getSource() == guiMenu.getJb_Nivel3()) {
+                velocidadNivel = 100;
+                guiNivel.setVisible(true);
+                guiNivel.setAlwaysOnTop(true);
+            }
+        }
+    }
+
+    @Override
     public void keyPressed(KeyEvent keyEvent2) {
         if (keyEvent2.getKeyCode() == KeyEvent.VK_ENTER) {
-            System.out.println("Estripó Enter");
+
             guiNivel.setVisible(true);
             guiNivel.setAlwaysOnTop(true);
         }

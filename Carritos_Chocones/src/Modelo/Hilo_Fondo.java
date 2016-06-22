@@ -5,6 +5,7 @@
  */
 package Modelo;
 
+import Controlador.Controlador_Menu;
 import Vista.GUI_Nivel;
 import javax.swing.JLabel;
 
@@ -35,7 +36,7 @@ public class Hilo_Fondo extends Thread {
     public void run() {
         try {
             while (true) {
-                sleep(300);
+                sleep(Controlador_Menu.velocidadNivel);
                 this.moverFondo();
             }
         } catch (Exception e) {

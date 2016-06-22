@@ -36,7 +36,11 @@ public class Controlador_Nivel implements ComponentListener {
 
     @Override
     public void componentShown(ComponentEvent componentEvent) {
+        try{
         this.hiloFondo.start();
+        }catch(Exception e){
+            System.out.println("Exception en componentShown() -> hiloFondo.start() "+e);
+        }
     }
 
     @Override

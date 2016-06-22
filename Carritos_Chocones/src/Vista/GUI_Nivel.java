@@ -37,6 +37,7 @@ public class GUI_Nivel extends javax.swing.JFrame {
         this.controladorNivel= new Controlador_Nivel(this, this.hiloFondo);
         this.addComponentListener(controladorNivel);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        this.setResizable(false);
     }
 
     public JLabel getFondo() {
@@ -64,7 +65,7 @@ public class GUI_Nivel extends javax.swing.JFrame {
 
         jl_Personaje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/carro_azul.png"))); // NOI18N
         getContentPane().add(jl_Personaje);
-        jl_Personaje.setBounds(430, 570, 90, 120);
+        jl_Personaje.setBounds(390, 580, 90, 120);
 
         jl_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo_juego.png"))); // NOI18N
         getContentPane().add(jl_Fondo);

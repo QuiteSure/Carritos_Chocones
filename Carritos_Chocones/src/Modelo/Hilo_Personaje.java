@@ -28,7 +28,7 @@ public class Hilo_Personaje {
         if (getPersonaje().getX() + 175 >= 730) {
             System.out.println("No puede pasar de 397");
         } else {
-            getPersonaje().setLocation(getPersonaje().getX() + 175, getPersonaje().getY());
+            getPersonaje().setLocation(getPersonaje().getX() + 150, getPersonaje().getY());
         }
     }
 
@@ -36,7 +36,7 @@ public class Hilo_Personaje {
         if (getPersonaje().getX() - 175 <= 180) {
             System.out.println("No puede mover a la izquierda");
         } else {
-            getPersonaje().setLocation(getPersonaje().getX() - 175, getPersonaje().getY());
+            getPersonaje().setLocation(getPersonaje().getX() - 150, getPersonaje().getY());
         }
     }
 

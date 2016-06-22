@@ -9,6 +9,7 @@ import Controlador.Controlador_Menu;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
+import javax.swing.JButton;
 
 /**
  *
@@ -32,6 +33,7 @@ public class GUI_Menu extends javax.swing.JFrame {
         this.addKeyListener(this.controladorMenu);
         this.setActionControlador(controladorMenu);
         this.setKeyControlador(controladorMenu);
+        this.setResizable(false);
     }
 
     public void setActionControlador(ActionListener controladorMenu) {
@@ -45,6 +47,20 @@ public class GUI_Menu extends javax.swing.JFrame {
         jb_Nivel2.addKeyListener(controladorMenu);
         jb_Nivel3.addKeyListener(controladorMenu);
     }
+
+    public JButton getJb_Nivel1() {
+        return jb_Nivel1;
+    }
+
+    public JButton getJb_Nivel2() {
+        return jb_Nivel2;
+    }
+
+    public JButton getJb_Nivel3() {
+        return jb_Nivel3;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
